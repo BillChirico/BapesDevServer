@@ -1,2 +1,2 @@
-# FiveM-Test-Server
-Bapes FiveM Test Server
+# Bapes FiveM Dev Server
+Bapes FiveM Dev Server

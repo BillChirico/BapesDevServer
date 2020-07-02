@@ -619,3 +619,15 @@ MigrationBackup/
 *.cfg
 /cache/
 /resources/\[local\]/
+
+.git/
+obj/
+
+*.class
+*.dll
+*.pdb
+*.bat
+*.csproj
+*.sln
+*.cache
+*.txt

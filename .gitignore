@@ -626,3 +626,5 @@ obj/
 *.sln
 *.cache
 *.txt
+
+citizen/system_resources/ 

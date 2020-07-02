@@ -614,3 +614,15 @@ MigrationBackup/
 .ionide/
 
 # End of https://www.toptal.com/developers/gitignore/api/lua,visualstudio,visualstudiocode,jetbrains,intellij,rider
+
+.git/
+obj/
+
+*.class
+*.dll
+*.pdb
+*.bat
+*.csproj
+*.sln
+*.cache
+*.txt

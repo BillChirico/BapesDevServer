@@ -629,3 +629,5 @@ obj/
 *.txt
 
 citizen/system_resources/ 
+
+txData/**/

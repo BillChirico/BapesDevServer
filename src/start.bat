@@ -1,2 +1,2 @@
-cd C:\bapes-dev-server\cfx-server-data-master
-C:\bapes-dev-server\FXServer.exe +exec server.cfg
+cd C:\esx-sync-server\cfx-server-data-master
+C:\esx-sync-server\FXServer.exe +exec server.cfg

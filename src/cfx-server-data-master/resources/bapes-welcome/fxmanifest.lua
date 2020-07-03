@@ -5,5 +5,5 @@ author 'Bapes'
 description 'Player Welcome'
 version '1.0.0'
 
--- client_script 'client.lua'
-server_script 'BapesWelcomeClient.net.dll'
+client_script {'BapesWelcomeClient.net.dll'}
+server_script {'BapesWelcomeServer.net.dll'}

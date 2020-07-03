@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Bapes",
+    "master": true,
+    "password_hash": "$2a$11$mSalL9n1pehnAv.wBuB.NeyrB34/y497PMfMLFgOoaLXVq0hBiARy",
+    "providers": {
+      "citizenfx": {
+        "id": "Bapes",
+        "data": {
+          "nameid": "https://forum.cfx.re/internal/user/1052469",
+          "name": "Bapes",
+          "profile": "https://forum.cfx.re/u/Bapes",
+          "picture": "https://forum.cfx.re/user_avatar/forum.cfx.re/bapes/256/571049_2.png",
+          "sub": "8819634f75fd85fac3d40ed6725dcd55d27ea1ef826c48363400f247360afc71"
+        }
+      }
+    },
+    "permissions": []
+  }
+]

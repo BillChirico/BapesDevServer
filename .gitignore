@@ -628,6 +628,6 @@ obj/
 *.cache
 *.txt
 
+# Custom
 citizen/system_resources/ 
-
-txData/**/
+txData/

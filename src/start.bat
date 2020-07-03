@@ -1,2 +1,2 @@
-cd C:\esx-sync-server\cfx-server-data-master
-C:\esx-sync-server\FXServer.exe +exec server.cfg
+cd C:\Users\Bill\Documents\GTA\Development\src\cfx-server-data-master
+C:\Users\Bill\Documents\GTA\Development\src\FXServer.exe +exec server.cfg

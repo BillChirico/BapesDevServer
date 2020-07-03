@@ -17,15 +17,13 @@ namespace BapesWelcomeClient
 
         private async Task OnTick()
         {
-            await Delay(0);
-
             try
             {
-                var closestPed = Util.GetClosest(World.GetAllPeds(), Game.PlayerPed.Position);
+                var closestPed = Util.GetClosestPed(World.GetAllPeds(), Game.PlayerPed.Position);
 
                 Debug.WriteLine($"Player: {Game.PlayerPed.Handle} | Closest: {closestPed.Handle}");
 
-                if (Vector3.Distance(closestPed.Position, Game.PlayerPed.Position) <= 10 &&
+                if (Vector3.Distance(closestPed.Position, Game.PlayerPed.Position) <= 3 &&
                     closestPed.Handle != GetPlayerPed(-1) && !IsPedInAnyVehicle(closestPed.Handle, true))
                 {
                     Screen.DisplayHelpTextThisFrame("Press ~INPUT_VEH_HEADLIGHT~ to start selling ~b~");
@@ -37,6 +35,7 @@ namespace BapesWelcomeClient
                         FreezeEntityPosition(closestPed.Handle, true);
                         TaskStandStill(closestPed.Handle, 5000);
                         Screen.ShowNotification("CAN SELL");
+                        Util.DrawText("Press ~INPUT_VEH_HEADLIGHT~ to start selling ~b~", closestPed.Position);
                     }
                 }
             }
@@ -45,38 +44,15 @@ namespace BapesWelcomeClient
             {
                 Debug.WriteLine(ex.Message);
             }
-
-            // Show notification when Z was pressed
-            // if (Game.IsControlPressed(0, Control.MultiplayerInfo))
-            // {
-            //     Text text = new Text("Sell drugs", new PointF(Game.PlayerPed.Position.X, Game.PlayerPed.Position.Y),
-            //         10.0f, Color.FromArgb(255, 255, 255), Font.Monospace, Alignment.Center, true, true);
-            //     text.Draw();
-            //     Screen.ShowNotification("Can sell");
-            // }
         }
     }
 
     public static class Util
     {
-        public static Ped? GetClosestPed(float x, float y, float z)
+        public static Ped GetClosestPed(IEnumerable<Ped> peds, Vector3 point)
         {
-            var searchPosition = new Vector3(x, y, z);
-            var allPeds = World.GetAllPeds();
-            Ped? closestPed = null;
-
-            foreach (var ped in allPeds)
-                if (closestPed != null)
-                {
-                    if (Vector3.Distance(searchPosition, ped.Position) <
-                        Vector3.Distance(searchPosition, closestPed.Position)) closestPed = ped;
-                }
-                else
-                {
-                    closestPed = ped;
-                }
-
-            return closestPed;
+            return peds.OrderBy(x => Vector3.Distance(x.Position, point)).ToList()
+                .FirstOrDefault(x => x != Game.PlayerPed);
         }
 
         public static Vector3 GetClosest(IEnumerable<Vector3> points, Vector3 point)
@@ -87,6 +63,21 @@ namespace BapesWelcomeClient
         public static Entity GetClosest(IEnumerable<Entity> entities, Vector3 point)
         {
             return entities.OrderBy(x => Vector3.Distance(x.Position, point)).ToList().FirstOrDefault();
+        }
+
+        public static void DrawText(string text, Vector3 position)
+        {
+            SetTextScale(0, 0.35f);
+            SetTextFont(0);
+            SetTextProportional(true);
+            SetTextColour(255, 255, 255, 255);
+            SetTextDropshadow(0, 0, 0, 0, 0);
+            SetTextEdge(2, 0, 0, 0, 150);
+            SetTextDropShadow();
+            SetTextOutline();
+            SetTextEntry(text);
+            SetTextCentre(true);
+            DrawText(text, position);
         }
     }
 }

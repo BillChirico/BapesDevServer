@@ -618,7 +618,6 @@ MigrationBackup/
 obj/
 
 *.class
-*.dll
 *.pdb
 *.bat
 *.csproj

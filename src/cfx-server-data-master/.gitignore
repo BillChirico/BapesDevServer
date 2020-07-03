@@ -190,13 +190,11 @@ luac.out
 *.exp
 
 # Shared objects (inc. Windows DLLs)
-*.dll
 *.so
 *.so.*
 *.dylib
 
 # Executables
-*.exe
 *.out
 *.app
 *.i*86
@@ -625,7 +623,6 @@ MigrationBackup/
 obj/
 
 *.class
-*.dll
 *.pdb
 *.bat
 *.csproj
